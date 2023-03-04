@@ -8,6 +8,7 @@ import tensorflow as tf
 
 def tf2tflite(input_model_dir_path, output_model_file_path, representative_dataset_gen):
     os.makedirs(os.path.dirname(output_model_file_path), exist_ok=True)
+    tf.compat.v1.enable_eager_execution()
 
     converter = tf.lite.TFLiteConverter.from_saved_model(input_model_dir_path)
     converter.experimental_new_converter = True

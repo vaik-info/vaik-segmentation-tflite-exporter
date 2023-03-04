@@ -42,14 +42,14 @@ def main(input_model_dir_path, train_input_dir_path, output_model_file_path, sam
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='export')
     parser.add_argument('--input_model_dir_path', type=str,
-                        default='~/output_model/2023-03-03-14-32-08/step-5000_batch-8_epoch-9_loss_0.0027_one_hot_mean_io_u_0.8001_val_loss_0.0174_val_one_hot_mean_io_u_0.4809',
+                        default='~/output_model/2023-03-04-19-07-35/step-5000_batch-8_epoch-10_loss_0.0010_one_hot_mean_io_u_0.8857_val_loss_0.0016_val_one_hot_mean_io_u_0.8710',
                         help="input tensor model dir path")
     parser.add_argument('--train_input_dir_path', type=str,
                         default='~/.vaik-segmentation-pb-trainer/dump_train/raw')
     parser.add_argument('--output_model_file_path', type=str,
-                        default='~/.vaik-segmentation-pb-trainer/model.tflite',
+                        default='~/.vaik-segmentation-tflite-exporter/model.tflite',
                         help="output tflite model file path")
-    parser.add_argument('--sample_max_num', type=int, default=100, help="output tflite model dir path")
+    parser.add_argument('--sample_max_num', type=int, default=1000, help="output tflite model dir path")
     args = parser.parse_args()
 
     args.input_model_dir_path = os.path.expanduser(args.input_model_dir_path)
